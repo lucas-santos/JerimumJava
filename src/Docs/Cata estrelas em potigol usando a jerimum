@@ -1,0 +1,68 @@
+Explicação do Código em Potigol Usando a Biblioteca Jerimum
+
+O código apresentado é um jogo simples chamado "Cata Estrelas", que utiliza a biblioteca Jerimum para gerenciar gráficos, entrada do usuário e animações. Abaixo, explico o funcionamento do código em detalhes:
+
+Estrutura Geral
+Tipos Definidos:
+
+Jogador: Representa a nave do jogador, suas propriedades e comportamentos.
+Estrela: Representa as estrelas que o jogador deve coletar.
+Variáveis Globais:
+
+imagem_fundo: Imagem de fundo do jogo.
+nave: Instância do tipo Jogador.
+estado: Controla o estado atual do jogo (INICIO, JOGANDO, FIM).
+tempo: Controla o tempo de jogo.
+fonte: Fonte utilizada para desenhar texto na tela.
+estrelas: Lista de estrelas que aparecem no jogo.
+Funcionamento do Jogo
+1. Tipo Jogador
+Atributos:
+
+x, y: Posições da nave na tela.
+imagem: Imagem da nave.
+placar: Pontuação do jogador.
+vel_x, vel_y: Velocidades da nave nas direções x e y.
+angulo: Ângulo de rotação da nave.
+Métodos:
+
+desenhe(): Desenha a imagem da nave centralizada em sua posição.
+girar_direita(): Aumenta o ângulo da nave em 5 graus.
+girar_esquerda(): Diminui o ângulo da nave em 5 graus.
+acelerar(): Atualiza as velocidades vel_x e vel_y com base no ângulo atual.
+mover(): Atualiza a posição da nave com base nas velocidades e aplica um efeito de "atrito" (reduzindo a velocidade).
+catar_estrelas(estrelas): Coleta estrelas próximas e atualiza o placar.
+2. Tipo Estrela
+Atributos:
+
+cor: Cor da estrela.
+x, y: Posições aleatórias das estrelas na tela.
+imagens: Lista de imagens fatiadas da estrela.
+Métodos:
+
+desenhe(): Desenha a estrela na tela, alternando entre as imagens a cada 100 milissegundos.
+Lógica do Jogo
+1. Inicialização
+O jogo começa com a imagem de fundo e a nave posicionada.
+Um loop é criado para gerar estrelas aleatórias.
+2. Desenho e Atualização
+Método desenhe(): Desenha a imagem de fundo e chama a função de desenho apropriada com base no estado atual do jogo (INICIO, JOGANDO, FIM).
+Método atualize(): Atualiza a lógica do jogo com base no estado atual.
+3. Estados do Jogo
+INICIO:
+
+O jogador pressiona a tecla "I" para iniciar o jogo.
+Exibe uma mensagem para pressionar "I".
+JOGANDO:
+
+O jogador pode girar a nave e acelerar usando as teclas direcionais.
+Novas estrelas são geradas aleatoriamente.
+O jogador coleta estrelas próximas e atualiza o placar.
+O tempo é incrementado e, após 30 segundos, o jogo termina.
+FIM:
+
+Exibe a pontuação final do jogador.
+4. Início do Jogo
+O jogo é iniciado com a chamada jogo.iniciar(...), que configura o título, largura, altura, e as funções de atualização e desenho.
+Conclusão
+O código em Potigol utiliza a biblioteca Jerimum para facilitar a criação de jogos, permitindo que o desenvolvedor se concentre na lógica do jogo e na interação do usuário. A estrutura modular e os tipos definidos ajudam a organizar o código, tornando-o mais legível e fácil de manter. O jogo "Cata Estrelas" é um exemplo simples, mas eficaz, de como criar uma experiência interativa utilizando essa biblioteca.

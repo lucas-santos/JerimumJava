@@ -1,0 +1,105 @@
+Funcionamento da Biblioteca Jerimum
+
+A biblioteca Jerimum é uma implementação em Scala que fornece uma série de funcionalidades para o desenvolvimento de jogos e animações, integrando-se com a biblioteca Potigol. Abaixo, explico o funcionamento de cada componente principal da biblioteca:
+
+1. Animacao
+Classe: Animacao
+Função: Gerencia uma sequência de imagens que formam uma animação.
+Atributos:
+velocidade: Controla a velocidade da animação.
+imagens: Lista de imagens que compõem a animação.
+inicio: Marca o tempo de início da animação.
+tamanho: Número total de imagens na animação.
+Método:
+imagem(): Retorna a imagem atual da animação com base no tempo decorrido e na velocidade.
+2. Arquivo
+Classe: Arquivo
+Função: Lê arquivos de texto do sistema de arquivos.
+Método:
+leia(caminho): Lê o conteúdo de um arquivo e retorna uma lista de linhas.
+3. Cor
+Classe: Cor
+Função: Representa cores RGB.
+Atributos:
+vermelho, verde, azul: Componentes da cor.
+Métodos:
+color(): Retorna um objeto Color do Java AWT.
+Constantes: Define várias cores padrão (ex: AMARELO, AZUL, VERMELHO).
+4. Desenho
+Classe: Desenho
+Função: Gerencia a renderização de gráficos.
+Atributos:
+camadas: Mapa que armazena funções de desenho organizadas por camadas.
+Métodos:
+desenhe(g): Desenha todos os elementos gráficos na tela.
+incluir(z, funcao): Adiciona uma função de desenho a uma camada específica.
+5. Fonte
+Classe: Fonte
+Função: Gerencia a renderização de texto.
+Atributos:
+font: Fonte utilizada para desenhar texto.
+Métodos:
+desenhe(msg, x, y, z, cor): Desenha uma string em uma posição específica.
+desenheCentralizado(msg, x, y, z, cor): Desenha uma string centralizada em relação a um ponto.
+6. Imagem
+Classe: Imagem
+Função: Representa uma imagem e fornece métodos para manipulação.
+Atributos:
+buffer: Armazena a imagem em um objeto BufferedImage.
+caminho: Caminho do arquivo da imagem.
+Métodos:
+carregar(caminho): Carrega uma imagem do sistema de arquivos.
+fatie(x, y): Divide a imagem em subimagens.
+desenhe(x, y, z, angulo, scalaX, scalaY): Desenha a imagem na tela com opções de rotação e escala.
+7. Jogo
+Classe: Jogo
+Função: Controla o ciclo principal do jogo.
+Atributos:
+titulo, largura, altura, fps: Configurações do jogo.
+running: Indica se o jogo está em execução.
+thread: Thread que executa o jogo.
+Métodos:
+iniciar(...): Inicia o jogo com as configurações especificadas.
+run(): Loop principal do jogo que atualiza e desenha a tela.
+Métodos para calcular distâncias e projeções.
+8. Mouse
+Classe: Mouse
+Função: Gerencia eventos do mouse.
+Atributos:
+botoes: Array que armazena o estado dos botões do mouse.
+_x, _y: Posições atuais do mouse.
+Métodos:
+mousePressed, mouseReleased, mouseMoved: Manipuladores de eventos do mouse.
+9. Tela
+Classe: Tela
+Função: Cria a janela do jogo.
+Atributos:
+canvas: Área onde os gráficos são desenhados.
+frame: Janela principal do jogo.
+Métodos: Configura a janela e o canvas.
+10. Relogio
+Classe: Relogio
+Função: Fornece informações sobre o tempo.
+Métodos:
+agora(): Retorna o tempo atual.
+milisegundos(): Retorna o tempo em milissegundos desde o início.
+11. Som e Musica
+Classes: Som e Musica
+Função: Representam sons e músicas, respectivamente.
+Métodos:
+toque(): Método para tocar o som ou música.
+Métodos adicionais para controle de reprodução.
+12. Teclado
+Classe: Teclado
+Função: Gerencia eventos do teclado.
+Atributos:
+teclas: Array que armazena o estado das teclas.
+Métodos:
+keyPressed, keyReleased: Manipuladores de eventos do teclado.
+13. Package
+Classe: Package
+Função: Agrupa as instâncias principais da biblioteca para fácil acesso.
+Considerações Finais
+A biblioteca Jerimum é projetada para facilitar o desenvolvimento de jogos, fornecendo abstrações para gráficos, som, entrada do usuário e gerenciamento de tempo.
+A integração com Potigol permite que desenvolvedores utilizem uma linguagem de programação de alto nível para criar jogos de forma mais acessível.
+A estrutura modular da biblioteca permite que os desenvolvedores utilizem apenas os componentes necessários para suas aplicações, promovendo a reutilização de código e a organização.

@@ -1,0 +1,50 @@
+Relação entre o Código do Jogo e as Funcionalidades da Biblioteca Jerimum
+
+A biblioteca Jerimum fornece uma série de funcionalidades que facilitam o desenvolvimento de jogos, e o código do jogo "Cata Estrelas" utiliza essas funcionalidades de maneira eficaz. Abaixo, explico como cada parte do código do jogo se relaciona com as funcionalidades oferecidas pela biblioteca Jerimum.
+
+1. Gerenciamento de Imagens
+Uso: O jogo utiliza a classe Imagem da biblioteca Jerimum para carregar e desenhar imagens.
+Exemplo:
+imagem = Imagem("Nave.png"): Carrega a imagem da nave.
+imagem_fundo = Imagem("Space.png"): Carrega a imagem de fundo.
+imagens = Imagem.fatie("Estrela.png", 25, 25): Fatia a imagem da estrela em várias partes para animação.
+Relação: A biblioteca Jerimum simplifica o carregamento e a manipulação de imagens, permitindo que o desenvolvedor se concentre na lógica do jogo em vez de se preocupar com detalhes de manipulação de arquivos de imagem.
+2. Desenho Gráfico
+Uso: A biblioteca Jerimum fornece métodos para desenhar gráficos na tela.
+Exemplo:
+imagem.desenhe_centralizado(x, y, 3, angulo): Desenha a imagem da nave centralizada na posição (x, y) com um ângulo de rotação.
+img.desenhe_centralizado(x, y, 1, 0): Desenha a estrela na posição (x, y).
+Relação: A funcionalidade de desenho da biblioteca permite que o jogo renderize facilmente os elementos gráficos, como a nave e as estrelas, em posições específicas na tela.
+3. Gerenciamento de Cores
+Uso: A classe Cor da biblioteca Jerimum é utilizada para definir cores.
+Exemplo:
+cor: Cor: Atributo que define a cor da estrela.
+Cor.BRANCO: Usado para definir a cor das estrelas.
+Relação: A biblioteca fornece uma maneira fácil de trabalhar com cores, permitindo que o desenvolvedor utilize cores predefinidas e crie novas cores conforme necessário.
+4. Entrada do Usuário
+Uso: A biblioteca Jerimum gerencia a entrada do teclado e do mouse.
+Exemplo:
+Teclado.TECLA_I: Verifica se a tecla "I" foi pressionada para iniciar o jogo.
+Teclado.TECLA_PARA_DIREITA: Verifica se a tecla de seta para a direita foi pressionada para girar a nave.
+Relação: A biblioteca simplifica a captura de eventos de entrada, permitindo que o desenvolvedor reaja rapidamente às ações do usuário.
+5. Gerenciamento de Tempo
+Uso: A biblioteca Jerimum fornece funcionalidades para medir o tempo.
+Exemplo:
+tempo := tempo + 1.0/60.0: Incrementa o tempo a cada atualização do jogo.
+if tempo.inteiro >= 30 then estado := "FIM": Termina o jogo após 30 segundos.
+Relação: O gerenciamento de tempo é crucial para jogos, e a biblioteca facilita a implementação de lógica baseada em tempo, como contagem de tempo e controle de eventos temporais.
+6. Estruturas de Dados
+Uso: A biblioteca Jerimum oferece tipos de dados como Lista para gerenciar coleções de objetos.
+Exemplo:
+var estrelas = Lista(1, Estrela(Cor.BRANCO)): Cria uma lista de estrelas.
+estrelas := Estrela(Cor.BRANCO) :: estrelas: Adiciona novas estrelas à lista.
+Relação: A biblioteca fornece estruturas de dados que facilitam a manipulação de coleções, permitindo que o desenvolvedor gerencie facilmente múltiplos objetos, como estrelas no jogo.
+7. Organização do Código
+Uso: O código do jogo é organizado em tipos (tipo Jogador, tipo Estrela) e métodos, o que melhora a legibilidade e a manutenção.
+Relação: A biblioteca Jerimum permite que o desenvolvedor crie tipos personalizados e métodos, promovendo uma estrutura de código modular e organizada, que é essencial para o desenvolvimento de jogos complexos.
+Conclusão
+A biblioteca Jerimum fornece uma base sólida de funcionalidades que facilitam o desenvolvimento de jogos em Potigol. O código do jogo "Cata Estrelas" utiliza essas funcionalidades para gerenciar imagens, cores, entrada do usuário, tempo e estruturas de dados, permitindo que o desenvolvedor se concentre na lógica do jogo e na experiência do usuário. Essa integração entre o código do jogo e a biblioteca Jerimum resulta em um desenvolvimento mais eficiente e organizado.
+
+
+
+
