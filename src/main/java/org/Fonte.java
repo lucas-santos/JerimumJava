@@ -1,11 +1,3 @@
-// Classe: Fonte
-// Função: Gerencia a renderização de texto.
-// Atributos:
-//   font: Fonte utilizada para desenhar texto.
-// Métodos:
-//   desenhe(msg, x, y, z, cor): Desenha uma string em uma posição específica.
-//   desenheCentralizado(msg, x, y, z, cor): Desenha uma string centralizada em relação a um ponto.
-
 package org;
 
 import java.awt.Font;

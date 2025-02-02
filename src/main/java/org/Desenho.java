@@ -1,11 +1,3 @@
-// Classe: Desenho
-// Função: Gerencia a renderização de gráficos.
-// Atributos:
-//  camadas: Mapa que armazena funções de desenho organizadas por camadas.
-// Métodos:
-//  desenhe(g): Desenha todos os elementos gráficos na tela.
-//  incluir(z, funcao): Adiciona uma função de desenho a uma camada específica.
-
 package org;
 
 import java.awt.Graphics2D;

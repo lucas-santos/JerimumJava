@@ -1,11 +1,3 @@
-// Classe: Cor
-// Função: Representa cores RGB.
-// Atributos:
-//   vermelho, verde, azul: Componentes da cor.
-// Métodos:
-//   color(): Retorna um objeto Color do Java AWT.
-// Constantes: Define várias cores padrão (ex: AMARELO, AZUL, VERMELHO).
-
 package org;
 
 import java.awt.Color;

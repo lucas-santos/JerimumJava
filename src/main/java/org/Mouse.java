@@ -1,76 +1,69 @@
 package org;
-// Classe: Mouse
 
-// Função: Gerencia eventos do mouse.
-// Atributos:
-//  botoes: Array que armazena o estado dos botões do mouse.
-//  _x, _y: Posições atuais do mouse.
-// Métodos:
-//  mousePressed, mouseReleased, mouseMoved: Manipuladores de eventos do mouse.
-
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import javax.swing.JFrame;
 
 public class Mouse implements MouseListener, MouseMotionListener {
-    private static final boolean[] botoes = new boolean[4];
-    private static int _x, _y;
+    private static int mouseX = 0;
+    private static int mouseY = 0;
+    private static boolean mouseClicado = false;
 
-    public static boolean BOTAO_ESQUERDO() {
-        return botoes[1];
-    }
+    // Construtor privado para evitar instanciação direta
+    private Mouse() {}
 
-    public static boolean BOTAO_DIREITO() {
-        return botoes[3];
-    }
-
-    private void update(MouseEvent e, boolean valor) {
-        int botao = e.getButton();
-        if (botao == MouseEvent.BUTTON1) {
-            botoes[1] = valor;
-        }
-        if (botao == MouseEvent.BUTTON3) {
-            botoes[3] = valor;
-        }
+    // Método para inicializar o Mouse
+    static void inicializar(JFrame frame, Canvas panel) {
+        Mouse mouse = new Mouse();
+        frame.addMouseListener(mouse);
+        frame.addMouseMotionListener(mouse);
+        panel.addMouseListener(mouse);
+        panel.addMouseMotionListener(mouse);
     }
 
     @Override
+    public void mouseClicked(MouseEvent e) {}
+
+    @Override
     public void mousePressed(MouseEvent e) {
-        update(e, true);
+        mouseClicado = true;
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        update(e, false);
+        mouseClicado = false;
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        mouseX = e.getX();
+        mouseY = e.getY();
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        _x = e.getX();
-        _y = e.getY();
+        mouseX = e.getX();
+        mouseY = e.getY();
     }
 
-    public static int x() {
-        return _x;
+    // Métodos para acessar o estado do mouse
+    public static int getMouseX() {
+        return mouseX;
     }
 
-    public static int y() {
-        return _y;
+    public static int getMouseY() {
+        return mouseY;
     }
 
-    @Override
-    public void mouseDragged(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
+    public static boolean isMouseClicado() {
+        return mouseClicado;
     }
 }

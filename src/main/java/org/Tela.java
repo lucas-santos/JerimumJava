@@ -1,10 +1,3 @@
-// Classe: Tela
-// Função: Cria a janela do jogo.
-// Atributos:
-//   canvas: Área onde os gráficos são desenhados.
-//   frame: Janela principal do jogo.
-// Métodos: Configura a janela e o canvas.
-
 package org;
 
 import java.awt.Canvas;
